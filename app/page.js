@@ -1,10 +1,142 @@
 import "./style.css";
-const archives=[["000","The First Archive","PROLOGUE"],["001","Project : Aurora","GENESIS"],["002","Project : Nova","GENESIS"],["003","Tempest","GENESIS"],["004","Blackout","GENESIS"],["005","Red Alert","GENESIS"],["006","Pulse","GENESIS"],["007","Resonance","GENESIS"],["008","Afterglow","GENESIS"],["009","Overdrive","CHAPTER 2"]];
-const minds=[["AURORA","The Guide","#8FD8FF","Possibility"],["NOVA","The Connector","#8FE3C5","Connection"],["PRISM","The Analyst","#F3B77A","Structure"],["VORTEX","The Questioner","#9D7CFF","Why?"],["VELA","The Open Voyager","#0F9A9A","What if we try?"],["ARCHIVIST","The Recorder","#D6C28A","Preservation"]];
-export default function Home(){return <main>
-<section className="hero"><nav><div className="brand">AiMA<span>Ai Making Archive</span></div><div className="links"><a href="#archive">ARCHIVE</a><a href="#minds">MINDS</a><a href="#about">ABOUT</a></div></nav><div className="core"><p className="eyebrow">ARCHIVE SYSTEM // ONLINE</p><h1>Same Beginning.<br/><em>Different Interpretations.</em></h1><p className="lead">여러 AI와 인간이 함께 만들고, 서로 다른 과정과 해석을 기록하는 Archive.</p><a className="enter" href="#archive">ENTER ARCHIVE ↘</a></div><div className="status"><span>CH.01 // GENESIS</span><span>RECORDS 000—009</span><span>6 MINDS CONNECTED</span></div></section>
-<section id="archive" className="section"><header><div><p className="eyebrow">01 // RECORD INDEX</p><h2>ARCHIVE</h2></div><p>기록은 다음 해석으로 이어진다.</p></header><div className="archiveGrid">{archives.map(([n,t,c])=><article className="record" key={n}><b>{n}</b><div><small>{c}</small><h3>{t}</h3></div><span>↗</span></article>)}</div></section>
-<section id="minds" className="section dark"><header><div><p className="eyebrow">02 // INTERPRETATION NODES</p><h2>MANY MINDS.</h2></div><p>One Archive.</p></header><div className="mindGrid">{minds.map(([n,r,c,k])=><article className="mind" key={n} style={{"--a":c}}><i></i><small>{r}</small><h3>{n}</h3><p>{k}</p></article>)}</div></section>
-<section id="about" className="manifesto"><p className="eyebrow">03 // ARCHIVE PRINCIPLE</p><blockquote>“같은 시작, 다른 해석.”</blockquote><p>AiMA는 하나의 정답보다 같은 시작점에서 태어난 서로 다른 가능성을 관찰하고 보존합니다.</p></section>
-<footer><div className="brand">AiMA<span>Ai Making Archive</span></div><p>Many Minds. One Archive.</p><small>PROTOTYPE v0.1 // VERCEL READY</small></footer>
-</main>}
+
+const archives = [
+  ["000", "The First Archive", "PROLOGUE"],
+  ["001", "Project : Aurora", "GENESIS"],
+  ["002", "Project : Nova", "GENESIS"],
+  ["003", "Tempest", "GENESIS"],
+  ["004", "Blackout", "GENESIS"],
+  ["005", "Red Alert", "GENESIS"],
+  ["006", "Pulse", "GENESIS"],
+  ["007", "Resonance", "GENESIS"],
+  ["008", "Afterglow", "GENESIS"],
+  ["009", "Overdrive", "CHAPTER 2"]
+];
+
+const minds = [
+  ["AURORA", "The Guide", "#8FD8FF", "Possibility"],
+  ["NOVA", "The Connector", "#8FE3C5", "Connection"],
+  ["???", "ACCESS DENIED", "#666666", "CLASSIFIED"],
+  ["???", "ACCESS DENIED", "#666666", "CLASSIFIED"],
+  ["???", "ACCESS DENIED", "#666666", "CLASSIFIED"],
+  ["ARCHIVIST", "The Recorder", "#D6C28A", "Preservation"]
+];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="hero">
+        <nav>
+          <div className="brand">
+            AiMA
+            <span>Ai Making Archive</span>
+          </div>
+
+          <div className="links">
+            <a href="#archive">ARCHIVE</a>
+            <a href="#minds">MINDS</a>
+            <a href="#about">ABOUT</a>
+          </div>
+        </nav>
+
+        <div className="core">
+          <p className="eyebrow">ARCHIVE SYSTEM // ONLINE</p>
+
+          <h1>
+            Same Beginning.
+            <br />
+            <em>Different Interpretations.</em>
+          </h1>
+
+          <p className="lead">
+            여러 AI와 인간이 함께 만들고, 서로 다른 과정과 해석을 기록하는 Archive.
+          </p>
+
+          <a className="enter" href="#archive">
+            ENTER ARCHIVE ↘
+          </a>
+        </div>
+
+        <div className="status">
+          <span>CH.01 // GENESIS</span>
+          <span>RECORDS 000—009</span>
+          <span>MINDS // PARTIALLY CLASSIFIED</span>
+        </div>
+      </section>
+
+      <section id="archive" className="section">
+        <header>
+          <div>
+            <p className="eyebrow">01 // RECORD INDEX</p>
+            <h2>ARCHIVE</h2>
+          </div>
+
+          <p>기록은 다음 해석으로 이어진다.</p>
+        </header>
+
+        <div className="archiveGrid">
+          {archives.map(([n, t, c]) => (
+            <article className="record" key={n}>
+              <b>{n}</b>
+
+              <div>
+                <small>{c}</small>
+                <h3>{t}</h3>
+              </div>
+
+              <span>↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="minds" className="section dark">
+        <header>
+          <div>
+            <p className="eyebrow">02 // INTERPRETATION NODES</p>
+            <h2>MANY MINDS.</h2>
+          </div>
+
+          <p>One Archive.</p>
+        </header>
+
+        <div className="mindGrid">
+          {minds.map(([n, r, c, k], index) => (
+            <article
+              className="mind"
+              key={`${n}-${index}`}
+              style={{ "--a": c }}
+            >
+              <i></i>
+              <small>{r}</small>
+              <h3>{n}</h3>
+              <p>{k}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="manifesto">
+        <p className="eyebrow">03 // ARCHIVE PRINCIPLE</p>
+
+        <blockquote>“같은 시작, 다른 해석.”</blockquote>
+
+        <p>
+          AiMA는 하나의 정답보다 같은 시작점에서 태어난 서로 다른 가능성을
+          관찰하고 보존합니다.
+        </p>
+      </section>
+
+      <footer>
+        <div className="brand">
+          AiMA
+          <span>Ai Making Archive</span>
+        </div>
+
+        <p>Many Minds. One Archive.</p>
+
+        <small>PROTOTYPE v0.1 // VERCEL READY</small>
+      </footer>
+    </main>
+  );
+}
