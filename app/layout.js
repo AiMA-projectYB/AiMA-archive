@@ -1,0 +1,2 @@
+export const metadata={title:"AiMA — Ai Making Archive",description:"Same Beginning, Different Interpretations."};
+export default function RootLayout({children}){return <html lang="ko"><body>{children}</body></html>}
